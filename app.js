@@ -19,17 +19,32 @@ import allRiddles from './riddles/index.js'
 import MultipleChoiceRiddle from './classes/MultipleChoiceRiddle.js';
 
 
+function shuffleRiddles(riddles) {
+    for (let i = riddles.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+
+        [riddles[i], riddles[j]] = [riddles[j], riddles[i]];
+    }
+
+    return riddles;
+}
+
 console.log("Welcome to the Riddle Game!");
+
+let difficulty=prompt("'Choose difficulty: easy / medium / hard:")
 
 const name = prompt("What is your name? ");
 const player = new Player(name.trim());
 
+shuffleRiddles(allRiddles);
 allRiddles.forEach(riddle=>{
+    if(riddle.difficulty===difficulty){
     let startTime=Date.now()
-   let current=new Riddle(riddle.id, riddle.name, riddle.taskDescription, riddle.correctAnswer)
+   let current=new Riddle(riddle.id, riddle.name, riddle.taskDescription, riddle.correctAnswer, riddle.difficulty, riddle.timeLimit, riddle.hint)
    let multiple=new MultipleChoiceRiddle(current, riddle.choices)
-   multiple.ask(prompt)
-   let endTime=Date.now()
-   player.recordTime(startTime, endTime)
+   let penalty=multiple.ask(prompt)
+   let endTime=Date.now()+penalty
+
+   player.recordTime(startTime, endTime)}
 })
 player.showStats()

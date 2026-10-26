@@ -7,7 +7,10 @@
 export default {
   id: 2,
   name: "Numbers",
+    difficulty:"medium",
+      timeLimit:8000,
   taskDescription: "I am an odd number. Take away one letter, and I become even. What number am I??",
   correctAnswer: 1,
-  choices:["eleven", "seven", "one","twelve"]
+  choices:["eleven", "seven", "one","twelve"],
+  hint:"6+1"
 };

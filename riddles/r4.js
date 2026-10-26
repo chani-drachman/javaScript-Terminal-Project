@@ -7,7 +7,10 @@
 export default  {
     id: 4,
     name: "Time",
+      difficulty:"easy",
+        timeLimit:5000,
     taskDescription: "How many months have 28 days?",
     correctAnswer: 3,
-    choices:[2,4,6,12]
+    choices:[2,4,6,12],
+    hint:"more than 6"
   }

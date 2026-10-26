@@ -15,7 +15,7 @@ class Player{
         this.times=[]
     }
 recordTime(start,end){
-    this.times.push(end-start)
+    this.times.push((end-start)/1000)
 }
 
 showStats(){
@@ -24,7 +24,7 @@ showStats(){
     this.times.forEach(duration=>{
         total+=duration;
     })
-    avg=total/(this.times.length)
+    avg=(total/(this.times.length))/1000
     console.log(`total time:${total}, avarage time:${avg}`)
 }
 

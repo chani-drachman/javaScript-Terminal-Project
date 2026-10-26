@@ -9,7 +9,10 @@
 export default {
   id: 1,
   name: "Easy Math",
+  difficulty:"easy",
+  timeLimit:5000,
   taskDescription: "What number comes next: 2, 4, 6, 8, ___?",
   correctAnswer: 0,
-  choices: [10,12,13,8]
+  choices: [10,12,13,8],
+  hint:"9+1"
 };

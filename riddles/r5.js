@@ -7,7 +7,10 @@
 export default   {
     id: 5,
     name: "Animals",
+      difficulty:"medium",
+        timeLimit:8000,
     taskDescription: "I have four legs, whiskers, and I say 'meow.' What am I?",
     correctAnswer: 1,
-    choices:["a dog", "a cat", "a lion", "a bird"]
+    choices:["a dog", "a cat", "a lion", "a bird"],
+    hint:"starts with c"
   }
