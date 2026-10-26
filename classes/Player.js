@@ -9,3 +9,24 @@
 //   - calculate the duration (end - start) and add it to the times array
 // - showStats()
 //   - show the total time and the average time per riddle
+class Player{
+    constructor(name){
+        this.name=name
+        this.times=[]
+    }
+recordTime(start,end){
+    this.times.push(end-start)
+}
+
+showStats(){
+    let total=0, avg=0;
+
+    this.times.forEach(duration=>{
+        total+=duration;
+    })
+    avg=total/(this.times.length)
+    console.log(`total time:${total}, avarage time:${avg}`)
+}
+
+}
+export default Player;
